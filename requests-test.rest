@@ -1,0 +1,98 @@
+
+# /////////////////     USERS
+
+###
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "email":"juan@mail.com", "password":"juan123", "name":"Juan Manuel", "phone":"3977580942"
+}
+
+###
+POST http://localhost:3000/users/login
+Content-Type: application/json
+
+{
+  "email":"juan@mail.com", "password":"juan123"
+}
+
+###
+GET http://localhost:3000/users
+Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFjZjI3OGNkLTUzMjMtNGQ2ZS1iN2E0LTZmZjI1MDUyNmQyOSIsImVtYWlsIjoiam1AYy5tIiwiaWF0IjoxNTg3MTc5NjMwfQ.lnSM8JjT4F4YXoAm5GuHY3iGcH76mDV6E6USBou6CvzbPnVxnEInp2JX31r9X-ADvoaeuWHyzdOjjZKuE9LT8_gJ5mkrME4tuYkhOvgWJlgwDZo1hs8icsneAH5Lfe62VWTB9gBSswfE3lXUhXPiy28a96sd1RceRlDHU7HrFEc
+ 
+###
+GET http://localhost:3000/users/all-data
+Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBjYTgxN2VlLWI3MzktNDFmYy05NDkzLWM5YzlkYzc1ZWU5OSIsImVtYWlsIjoianVhbkBtYWlsLmNvbSIsImlhdCI6MTU4NjA3NTA0OH0.D4LdAgWmOoBGmXKRhCCPW4PTemnsxtalHFuNAhzQPxu7m8_tPhBjV-cX1awOlEefQ5OFAz7D8qHYGgUNsfVMO35CAc00SZveqSIymwp58SrSz8pmqQd2Zs6zdam6fMRJNqts6STI6f7cuIqRRnixQ49JnIzibbZ3gbhZSnl3xNA
+
+###
+GET http://localhost:8080/users/most-data
+Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjExMWYxMDIyLTI0YjctNTk4ZC05NjA3LTU3YTA3Y2Q4MTY2NSIsImVtYWlsIjoiY0BtYWlsLmNvbSIsImlhdCI6MTU4Nzk3NzM2NH0.k1Qa9VvZVY6DkXC_EmHCnaKAXv3itMbDUJZGY5A2efeVtSm3veOr5zrLMKDB36k0xeo5rYXNL5O_4QzniwKi5zFo2GcTF8vm7IpViME_vnoCjtmcP4lFDv3SvlIpzeh5GKuKgRlLFr-yY506WzrCaJaFXrrNkqXKS8NzduFFg70
+
+# /////////////////     TRANSACTIONS
+
+###
+GET http://localhost:8080/transactions
+Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjFiNzlkNzVkLThlNDUtNTg4NS04MzZiLTJhM2QzZjkwYmEwNiIsImVtYWlsIjoibUBtYWlsLmNvbSIsImlhdCI6MTU4Nzk3MTg2MX0.lA3C8I0SaV4qg899p1iGkZlcdb8-_IF6-z1jWAUEzTTwor_3B-UWgTzSowHBvKx2bL2ZEp_mFcT6Yg8nUgy_KKuRDCNciNGwg2RD815xXtjn9guHZYOF83uIHFoTqwm17iGEH_3yVUnoP47B7vfPAy2vU5MpgdG7Rl2GAgpyCAg
+
+### 0ca817ee-b739-41fc-9493-c9c8dc75ee99 0ca817ae-b739-41fc-9493-c9c9dc75ee99
+
+POST http://localhost:8080/transactions
+Content-Type: application/json
+
+{
+  "plate":"HCS864", 
+  "parkingLotId":"0ca817ee-b739-41fc-9493-c9c8dc75ee99"
+}
+
+###
+
+POST http://localhost:8080/transactions/complete
+Content-Type: application/json
+
+{
+  "plate":"HCS864", 
+  "parkingLotId":"0ca817ee-b739-41fc-9493-c9c8dc75ee99"
+}
+
+# /////////////////     PAYMENT METHODS
+
+###
+POST http://localhost:3000/payment-methods
+
+###
+DELETE http://localhost:3000/payment-methods/
+
+
+# /////////////////     VEHICLES
+
+###
+POST  http://localhost:3000/vehicles
+Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBjYTgxN2VlLWI3MzktNDFmYy05NDkzLWM5YzlkYzc1ZWU5OSIsImVtYWlsIjoianVhbkBtYWlsLmNvbSIsImlhdCI6MTU4NjA3NTA0OH0.D4LdAgWmOoBGmXKRhCCPW4PTemnsxtalHFuNAhzQPxu7m8_tPhBjV-cX1awOlEefQ5OFAz7D8qHYGgUNsfVMO35CAc00SZveqSIymwp58SrSz8pmqQd2Zs6zdam6fMRJNqts6STI6f7cuIqRRnixQ49JnIzibbZ3gbhZSnl3xNA
+Content-Type: application/json
+
+{
+  "plate":"BTV 283", "description":"Toyota"
+}
+
+###
+PUT  http://localhost:3000/vehicles/OLE%20402
+Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImNhMWRiZjRmLTU4NTUtNGNjMy1hNDk0LWNkZGY5MDhlOGJhNCIsImVtYWlsIjoiam1AYy5tIiwiaWF0IjoxNTg3NTA2NzE2fQ.UIV2olGsf78LJhfYFkDxTay_O-fdPVe5Tbxcx4koc97OBpFho_kK1vdq0VTwGjCqWSrpZ5gYP30JnTWuHfWPX37yIYVil4GdXRFUkekzJHYY6O8l_9kN0AfLDxZp1YO_fTy5COq9ysKDI6cODukBK8OG5WmGu6J9QaAoY8VSsDw
+Content-Type: application/json
+
+{
+  "description":"Nissan"
+}
+
+###
+DELETE  http://localhost:3000/vehicles/BTV%20283
+Authorization: eyJhbGciOiJSUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjBjYTgxN2VlLWI3MzktNDFmYy05NDkzLWM5YzlkYzc1ZWU5OSIsImVtYWlsIjoianVhbkBtYWlsLmNvbSIsImlhdCI6MTU4NjA3NTA0OH0.D4LdAgWmOoBGmXKRhCCPW4PTemnsxtalHFuNAhzQPxu7m8_tPhBjV-cX1awOlEefQ5OFAz7D8qHYGgUNsfVMO35CAc00SZveqSIymwp58SrSz8pmqQd2Zs6zdam6fMRJNqts6STI6f7cuIqRRnixQ49JnIzibbZ3gbhZSnl3xNA
+
+
+# /////////////////     PARKING LOTS
+
+###
+GET http://localhost:3000/parking-lots
+
+###
+GET http://localhost:3000/parking-lots/0ca817ae-b739-41fc-9493-c9c9dc75ee99
